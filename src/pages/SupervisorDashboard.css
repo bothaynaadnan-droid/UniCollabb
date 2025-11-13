@@ -1,0 +1,729 @@
+.supervisor-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #d3d3d3 0%, #dddcdcb7 50%, #e6e5e5 100%);
+  color: rgb(13, 13, 13);
+  position: center;
+}
+
+/* Supervisor Header Styles */
+.supervisor-header {
+  padding: 3rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.supervisor-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+  animation: float 20s linear infinite;
+}
+
+.supervisor-avatar {
+  font-size: 4rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.supervisor-name {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, #989797, #a8d8ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.supervisor-specialization {
+  color: #a8d8ff;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+/* Glassmorphism Effect */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Statistics Panel */
+.statistics-panel {
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  margin-right: 1rem;
+  color: #4fc3f7;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4fc3f7;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Project Cards */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.project-card:hover::before {
+  left: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) rotateX(5deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.project-status {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.project-status.in-progress {
+  background: #4caf50;
+  color: white;
+}
+
+.project-status.completed {
+  background: #2196f3;
+  color: white;
+}
+
+/* Skills Display */
+.skills-display {
+  margin-top: 1rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.skill-tag {
+  background: rgba(79, 195, 247, 0.2);
+  color: #4fc3f7;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  border: 1px solid rgba(79, 195, 247, 0.3);
+}
+
+/* Team Members */
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.team-member {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.member-avatar {
+  font-size: 1.2rem;
+}
+
+/* Progress Bar */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0.5rem 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4fc3f7, #2196f3);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+/* Forms */
+.modern-input, .modern-select, .modern-textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.modern-input:focus, .modern-select:focus, .modern-textarea:focus {
+  outline: none;
+  border-color: #4fc3f7;
+  box-shadow: 0 0 0 2px rgba(79, 195, 247, 0.2);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.skills-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.skill-chip {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.skill-chip.selected {
+  background: rgba(79, 195, 247, 0.3);
+  border-color: #4fc3f7;
+  color: #4fc3f7;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #2196f3, #4fc3f7);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #4fc3f7;
+}
+
+/* AI Assistant */
+.ai-assistant-btn {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff6b6b, #ffa726);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.ai-assistant-btn:hover {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+}
+
+.ai-assistant-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.ai-assistant {
+  width: 90%;
+  max-width: 500px;
+  padding: 2rem;
+}
+
+.ai-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.ai-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ai-icon {
+  font-size: 1.5rem;
+  color: #ffa726;
+}
+
+/* Language Switcher */
+.language-switcher {
+  position: fixed;
+  top: 100px;
+  right: 30px;
+  display: flex;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  padding: 0.3rem;
+  backdrop-filter: blur(10px);
+}
+
+.lang-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: transparent;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang-btn.active {
+  background: rgba(79, 195, 247, 0.3);
+  color: #4fc3f7;
+}
+
+/* Stars Rating */
+.stars-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.star {
+  color: #666;
+  transition: all 0.2s ease;
+}
+
+.star.filled {
+  color: #ffa726;
+}
+
+.star.interactive {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.star.interactive:hover {
+  transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateX(-100px) translateY(0px); }
+  100% { transform: translateX(100px) translateY(-100px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .supervisor-name {
+    font-size: 2rem;
+  }
+  
+  .ai-assistant-btn {
+    bottom: 80px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .language-switcher {
+    top: 80px;
+    right: 20px;
+  }
+}
+
+/* Dark/Light Mode Support */
+@media (prefers-color-scheme: light) {
+  .supervisor-dashboard {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+  }
+  
+  .glassmorphism {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+  }
+  
+  .modern-input, .modern-select, .modern-textarea {
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+}
+/* Add these new styles to SupervisorDashboard.css */
+
+/* Main content spacing to prevent navbar overlap */
+.main-content-with-spacing {
+  padding: 2rem 0;
+  min-height: calc(100vh - 200px);
+}
+
+.bottom-nav-spacing {
+  margin-top: auto;
+}
+
+/* Horizontal Statistics Panel */
+.statistics-panel-horizontal {
+  padding: 1.5rem;
+  margin: 0 auto 2rem auto;
+  max-width: 1200px;
+}
+
+.stats-grid-horizontal {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.stat-card-horizontal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  min-height: 120px;
+  justify-content: center;
+}
+
+.stat-card-horizontal:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.stat-card-horizontal .stat-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #4fc3f7;
+}
+
+.stat-card-horizontal .stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4fc3f7;
+  margin-bottom: 0.25rem;
+}
+
+.stat-card-horizontal .stat-label {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Experience Section */
+.experience-section {
+  margin: 2rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-header h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #4fc3f7;
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.experience-item {
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.experience-item:hover {
+  transform: translateX(5px);
+  border-left: 4px solid #4fc3f7;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.experience-info h4 {
+  margin: 0 0 0.25rem 0;
+  color: #4fc3f7;
+  font-size: 1.1rem;
+}
+
+.experience-institution {
+  font-weight: bold;
+  margin: 0 0 0.25rem 0;
+  color: #fff;
+}
+
+.experience-duration {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.experience-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-icon {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ccc;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-icon:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #4fc3f7;
+}
+
+.btn-danger:hover {
+  color: #ff6b6b;
+  border-color: #ff6b6b;
+}
+
+.experience-description {
+  color: #ccc;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Experience Edit Form */
+.experience-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #ccc;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 1rem;
+}
+
+/* Dashboard Content Layout */
+.dashboard-content {
+  padding: 0 1rem;
+}
+
+/* Responsive Design for Horizontal Stats */
+@media (max-width: 1024px) {
+  .stats-grid-horizontal {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid-horizontal {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .experience-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .experience-actions {
+    align-self: flex-end;
+  }
+  
+  .main-content-with-spacing {
+    padding: 1rem 0;
+  }
+}
+
+/* Ensure proper spacing for all views */
+.projects-view .container,
+.dashboard-content .container {
+  padding-top: 1rem;
+}
+
+/* Fix for navbar overlap */
+.supervisor-dashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Additional spacing adjustments */
+.profile-header {
+  margin-bottom: 0;
+}
+
+.dashboard-section {
+  margin-top: 2rem;
+}
