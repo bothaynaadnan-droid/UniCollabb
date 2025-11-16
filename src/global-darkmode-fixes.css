@@ -1,0 +1,331 @@
+/* Comprehensive Dark Mode Fixes for All Pages */
+
+/* ===== HEADER & NAVIGATION ===== */
+body.dark-mode header {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-bottom-color: var(--border-color);
+}
+
+body.dark-mode .navbar {
+  background: var(--bg-secondary);
+}
+
+body.dark-mode .navbar-brand {
+  color: var(--text-primary);
+}
+
+body.dark-mode .nav-link {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+  color: var(--primary);
+}
+
+/* ===== HOME PAGE ===== */
+body.dark-mode .hero {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  color: var(--text-primary);
+}
+
+body.dark-mode .section {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body.dark-mode .feature-card {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+body.dark-mode .feature-card h3,
+body.dark-mode .feature-card p {
+  color: var(--text-primary);
+}
+
+/* ===== PROJECTS PAGE ===== */
+body.dark-mode .project-details {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body.dark-mode .project-header-details {
+  color: var(--text-primary);
+}
+
+body.dark-mode .project-card {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+body.dark-mode .detail-section {
+  color: var(--text-primary);
+}
+
+body.dark-mode .detail-section h2 {
+  color: var(--text-primary);
+}
+
+body.dark-mode .tool-card {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+body.dark-mode .sidebar {
+  background: transparent;
+}
+
+body.dark-mode .sidebar-section {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+body.dark-mode .supervisor-card,
+body.dark-mode .team-member {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+body.dark-mode .feedback-item {
+  background: var(--bg-tertiary);
+  border-color: var(--border-color);
+}
+
+/* ===== SUPERVISORS PAGE ===== */
+body.dark-mode .supervisors-container {
+  background: var(--bg-primary);
+}
+
+body.dark-mode .supervisor-card {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+body.dark-mode .supervisor-card h3,
+body.dark-mode .supervisor-card p {
+  color: var(--text-primary);
+}
+
+/* ===== STUDENT DASHBOARD ===== */
+body.dark-mode .dashboard {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body.dark-mode .dashboard-card {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+body.dark-mode .dashboard-header {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  color: var(--text-primary);
+}
+
+body.dark-mode .profile-card {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+body.dark-mode .stats-section {
+  background: var(--bg-secondary);
+}
+
+body.dark-mode .stat-box {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+/* ===== CHAT PAGE ===== */
+body.dark-mode .chat-container {
+  background: var(--bg-primary);
+}
+
+body.dark-mode .chat-sidebar {
+  background: var(--bg-secondary);
+  border-right-color: var(--border-color);
+}
+
+body.dark-mode .chat-main {
+  background: var(--bg-primary);
+}
+
+body.dark-mode .message {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+body.dark-mode .message.sent {
+  background: var(--primary);
+  color: white;
+}
+
+body.dark-mode .message.received {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+body.dark-mode .chat-input {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+/* ===== NOTES & CALENDAR PAGE ===== */
+body.dark-mode .notes-container {
+  background: var(--bg-primary);
+}
+
+body.dark-mode .calendar {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+body.dark-mode .calendar-header {
+  background: var(--bg-tertiary);
+}
+
+body.dark-mode .calendar-day {
+  background: transparent;
+  color: var(--text-primary);
+}
+
+body.dark-mode .calendar-day.today {
+  background: var(--primary);
+  color: white;
+}
+
+body.dark-mode .note-card {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+/* ===== ABOUT PAGE ===== */
+body.dark-mode .about-section {
+  background: transparent;
+  color: var(--text-primary);
+}
+
+body.dark-mode .about-card {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+body.dark-mode .team-card {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+body.dark-mode .team-card h3,
+body.dark-mode .team-card p {
+  color: var(--text-primary);
+}
+
+/* ===== UNIVERSAL ELEMENTS ===== */
+body.dark-mode .btn {
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .alert {
+  background: var(--bg-tertiary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+body.dark-mode .badge {
+  background: var(--primary);
+  color: white;
+}
+
+body.dark-mode .nav-tabs .nav-link {
+  color: var(--text-secondary);
+  border-color: transparent;
+}
+
+body.dark-mode .nav-tabs .nav-link:hover {
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+body.dark-mode .nav-tabs .nav-link.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+body.dark-mode .pagination .page-link {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+body.dark-mode .pagination .page-link:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+body.dark-mode .table {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+body.dark-mode .table th {
+  background: var(--bg-tertiary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+body.dark-mode .table td {
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+body.dark-mode .table tr:hover {
+  background: var(--bg-tertiary);
+}
+
+/* ===== SCROLLBAR ===== */
+body.dark-mode ::-webkit-scrollbar {
+  width: 10px;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 5px;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* ===== ENSURE ALL TEXT IS VISIBLE ===== */
+body.dark-mode {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+body.dark-mode * {
+  background-color: inherit;
+  color: inherit;
+}
+
+body.dark-mode a,
+body.dark-mode .link {
+  color: var(--primary);
+}
+
+body.dark-mode a:hover,
+body.dark-mode .link:hover {
+  color: var(--primary-light);
+}
