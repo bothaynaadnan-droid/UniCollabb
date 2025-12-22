@@ -1,0 +1,230 @@
+/* Features Section */
+.features {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  perspective: 1000px;
+}
+
+.feature-card {
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 
+    0 10px 30px rgba(211, 47, 47, 0.1),
+    0 4px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(-50px) rotateY(15deg);
+  border: 1px solid rgba(211, 47, 47, 0.1);
+}
+
+.feature-card.visible {
+  opacity: 1;
+  transform: translateX(0) rotateY(0);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(211, 47, 47, 0.15),
+    0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(186, 150, 150, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.feature-card:hover::before {
+  left: 100%;
+}
+
+/* Feature Shapes */
+.feature-shape {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 25px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  z-index: 2;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* User Management Shape */
+.user-shape .feature-shape::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  transition: all 0.4s ease;
+}
+
+.user-shape:hover .feature-shape::before {
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* Idea Management Shape */
+.idea-shape .feature-shape::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: circle(50% at 50% 50%);
+  transition: all 0.4s ease;
+}
+
+.idea-shape:hover .feature-shape::before {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(100, 89, 89, 0.4);
+}
+
+/* Supervision Shape */
+.supervision-shape .feature-shape::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 50% 100%, 0% 75%);
+  transition: all 0.4s ease;
+}
+
+.supervision-shape:hover .feature-shape::before {
+  transform: translateY(-5px);
+}
+
+/* Rating Shape */
+.rating-shape .feature-shape::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  transition: all 0.4s ease;
+}
+
+.rating-shape:hover .feature-shape::before {
+  transform: rotate(15deg) scale(1.1);
+}
+
+/* Communication Shape */
+.communication-shape .feature-shape::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: path('M25,0 L75,0 A25,25 0 0,1 100,25 L100,75 A25,25 0 0,1 75,100 L25,100 A25,25 0 0,1 0,75 L0,25 A25,25 0 0,1 25,0 Z');
+  transition: all 0.4s ease;
+}
+
+.communication-shape:hover .feature-shape::before {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+/* Feature Card Content */
+.feature-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: var(--dark);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.feature-card:hover h3 {
+  color: var(--primary);
+}
+
+.feature-card p {
+  color: var(--gray);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.feature-card:hover p {
+  color: var(--dark);
+}
+
+/* Animation for staggered entrance */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px) rotateY(15deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotateY(0);
+  }
+}
+
+.feature-card.visible {
+  animation: slideInFromLeft 0.6s ease-out forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .feature-card {
+    padding: 30px 20px;
+    transform: translateY(30px);
+  }
+  
+  .feature-card.visible {
+    transform: translateY(0);
+  }
+  
+  .feature-shape {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .feature-icon {
+    font-size: 2rem;
+  }
+}
+
+/* Enhanced background pattern */
+.features::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(211, 47, 47, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(211, 47, 47, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(211, 47, 47, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
